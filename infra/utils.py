@@ -58,3 +58,15 @@ def wait_for_element(action, expected, time, retries):
         time.sleep(time)
         retries = retries - 1
     return result
+
+
+def extract_temperature_unit(s):
+    """
+    extract temperature unit from a string
+        """
+    if 'F' in s:
+        return 'Fahrenheit'
+    elif 'C' in s:
+        return 'Celsius'
+    else:
+        return 'Kelvin'

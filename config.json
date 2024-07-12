@@ -1,5 +1,19 @@
 {
     "browser": "Firefox",
-    "home_page": "https://www.timeanddate.com"
-
+    "email" : "evoix.a@gmail.com",
+    "password": "Z789456123z",
+    "home_page": "https://www.timeanddate.com",
+    "news-page": "https://www.timeanddate.com/news/",
+    "world-clock-page": "https://www.timeanddate.com/worldclock/",
+    "time-zone-page": "https://www.timeanddate.com/time/",
+    "calendar-page": "https://www.timeanddate.com/calendar/",
+    "weather-page": "https://www.timeanddate.com/weather/",
+    "sun-and-moon-page": "https://www.timeanddate.com/astronomy/",
+    "timers-page": "https://www.timeanddate.com/counters/",
+    "calculator-page": "https://www.timeanddate.com/date/",
+    "Unit-Customization-Page":"https://www.timeanddate.com/custom/site.html",
+    "city": "Tel Aviv",
+    "location": "Tel Aviv\nIsrael",
+    "city-auto-fill": "te",
+    "updated-location": "Tel Aviv, Israel"
 }
