@@ -5,24 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f884da09-f01e-49c2-b63d-e38fdb2aece4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/logic/events_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logic/home_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logic/search_results_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logic/unit_customization_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_add_remove_event_list.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_change_weather_units.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_main_categories_links.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_search_results.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_set_home_location.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/final-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/final-project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logic/save_cookies.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logic/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/base_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/infra/base_page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infra/browser_wrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/infra/browser_wrapper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infra/config_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/infra/config_provider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/infra/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logic/base_page_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/base_page_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logic/events_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic/events_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_add_remove_event_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_add_remove_event_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_change_weather_units.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_change_weather_units.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test_login_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_login_process.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_main_categories_links.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_main_categories_links.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_search_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_search_results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_set_home_location.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_set_home_location.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +58,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.Python tests for test_add_remove_event_list.TestSearchResults.executor": "Run",
+    "Python tests.Python tests for test_add_remove_event_list.TestSearchResults.test_add_event_list.executor": "Run",
     "Python tests.Python tests for test_add_remove_event_list.TestSearchResults.test_add_remove_event_list.executor": "Run",
-    "Python tests.Python tests for test_change_weather_units.TestSearchResults.executor": "Debug",
+    "Python tests.Python tests for test_add_remove_event_list.TestSearchResults.test_remove_event_list.executor": "Run",
+    "Python tests.Python tests for test_change_weather_units.TestSearchResults.executor": "Run",
     "Python tests.Python tests for test_change_weather_units.TestSearchResults.test_change_temperature_units.executor": "Run",
     "Python tests.Python tests for test_change_weather_units.TestSearchResults.test_change_weather_units.executor": "Run",
     "Python tests.Python tests for test_login_process.TestDeviceTheme.executor": "Run",
@@ -83,6 +82,7 @@
     "Python tests.Python tests for test_set_home_location.TestSetHomeLocation.test_set_home_location.executor": "Run",
     "Python tests.Python tests in test_login_process.py.executor": "Run",
     "Python tests.Python tests in test_main_categories_links.py.executor": "Run",
+    "Python.save_cookies.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -95,22 +95,7 @@
       <recent name="C:\Users\evoix\PycharmProjects\5tech\final-project" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_add_remove_event_list.TestSearchResults.test_add_remove_event_list">
-    <configuration name="Python tests for test_add_remove_event_list.TestSearchResults.test_add_remove_event_list" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="final-project" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_add_remove_event_list.TestSearchResults.test_add_remove_event_list&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Python tests for test_set_home_location.TestSetHomeLocation.test_Set_home_location_autofill">
     <configuration name="Python tests for test_change_weather_units.TestSearchResults" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="final-project" />
       <option name="ENV_FILES" value="" />
@@ -141,7 +126,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_change_weather_units.TestSearchResults.test_change_weather_units" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_main_categories_links.TestMainCategoriesLinks" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="final-project" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -152,11 +137,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_change_weather_units.TestSearchResults.test_change_weather_units&quot;" />
+      <option name="_new_target" value="&quot;test_main_categories_links.TestMainCategoriesLinks&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_login_process.TestLoginProcess.test_login_successfully" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_search_results.TestSearchResults.test_search_results" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="final-project" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -167,17 +152,32 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_login_process.TestLoginProcess.test_login_successfully&quot;" />
+      <option name="_new_target" value="&quot;test_search_results.TestSearchResults.test_search_results&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_set_home_location.TestSetHomeLocation.test_Set_home_location_autofill" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="final-project" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_set_home_location.TestSetHomeLocation.test_Set_home_location_autofill&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_add_remove_event_list.TestSearchResults.test_add_remove_event_list" />
+        <item itemvalue="Python tests.Python tests for test_set_home_location.TestSetHomeLocation.test_Set_home_location_autofill" />
         <item itemvalue="Python tests.Python tests for test_change_weather_units.TestSearchResults.test_change_temperature_units" />
-        <item itemvalue="Python tests.Python tests for test_login_process.TestLoginProcess.test_login_successfully" />
         <item itemvalue="Python tests.Python tests for test_change_weather_units.TestSearchResults" />
-        <item itemvalue="Python tests.Python tests for test_change_weather_units.TestSearchResults.test_change_weather_units" />
+        <item itemvalue="Python tests.Python tests for test_main_categories_links.TestMainCategoriesLinks" />
+        <item itemvalue="Python tests.Python tests for test_search_results.TestSearchResults.test_search_results" />
       </list>
     </recent_temporary>
   </component>

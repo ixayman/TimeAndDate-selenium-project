@@ -9,10 +9,10 @@ from logic.base_page_app import BasePageApp
 class TestLoginProcess(unittest.TestCase):
     @classmethod
     def setUp(cls):
-        cls.browser = BrowserWrapper()
-        cls.driver = cls.browser.get_driver("home_page")
-        cls.base_page_app = BasePageApp(cls.driver)
         cls.config = ConfigProvider.load_from_file()
+        cls.browser = BrowserWrapper()
+        cls.driver = cls.browser.get_driver(cls.config, "home_page")
+        cls.base_page_app = BasePageApp(cls.driver)
 
     @classmethod
     def tearDown(cls):

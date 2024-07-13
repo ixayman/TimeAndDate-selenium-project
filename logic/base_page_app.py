@@ -206,11 +206,34 @@ class BasePageApp(BasePage):
             (By.XPATH, self.MY_EVENTS_POP_BUTTON)), message="My events pop up button not found").click()
 
     # -----------------------------------------------------------------------------------------------------
+
+    def is_locked_login_message_displayed(self):
+        """
+        Check if login is locked by website
+        :return:
+        """
+        try:
+            locked_login_message = (
+                self._driver.find_element(By.XPATH,'//div[text()="Too many account creations; please wait a while."]'))
+            locked_login_message.is_displayed()
+            return True
+        except NoSuchElementException:
+            return False
+
     def login_flow(self, email, password):
+        """
+        Login flow - login with account email and password
+        :param email: account email
+        :param password: account password
+        :return: None
+        """
         self.hover_on_account_menu()
         self.click_sign_in_pop_button()
         self.insert_in_email_field(email)
         self.insert_in_password_field(password)
         self.click_sign_in_button()
         time.sleep(2)
-
+        if self.is_locked_login_message_displayed():
+            print("login locked by website")
+            self._driver.close()
+            exit(-1)

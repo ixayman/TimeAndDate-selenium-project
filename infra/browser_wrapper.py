@@ -11,12 +11,11 @@ class BrowserWrapper:
 
     def __init__(self):
         self._driver = None
-        self._config = ConfigProvider.load_from_file()
         print("Test Start")
 
-    def get_driver(self, page):
+    def get_driver(self, config, page):
         try:
-            browser = self._config.get("browser", "Firefox")  # Default to Firefox if not specified
+            browser = config.get("browser", "Firefox")  # Default to Firefox if not specified
             if browser == "Chrome":
                 self._driver = webdriver.Chrome()
             elif browser == "Firefox":
@@ -26,17 +25,10 @@ class BrowserWrapper:
             else:
                 raise ValueError(f"Unsupported browser: {browser}")
 
-            url = self._config.get(page)
+            url = config.get(page)
             if url:
                 self._driver.maximize_window()
                 self._driver.get(url)
-                # try:
-                #     WebDriverWait(self._driver, 10).until(
-                #         ec.presence_of_element_located((By.XPATH, '//body'))
-                #     )
-                # except TimeoutException:
-                #     print("Loading the page took too long!")
-                #     exit(-1)
             else:
                 print(f"Page '{page}' not found in the configuration.")
                 exit(-1)

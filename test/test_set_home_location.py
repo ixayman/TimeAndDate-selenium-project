@@ -9,8 +9,9 @@ from logic.home_page import HomePage
 class TestSetHomeLocation(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        cls.config = ConfigProvider.load_from_file()
         cls.browser = BrowserWrapper()
-        cls.driver = cls.browser.get_driver("home_page")
+        cls.driver = cls.browser.get_driver(cls.config,"home_page")
         cls.home_page = HomePage(cls.driver)
         cls.config = ConfigProvider.load_from_file()
 

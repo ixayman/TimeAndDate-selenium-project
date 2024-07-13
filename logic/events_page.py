@@ -19,7 +19,8 @@ class EventsPage(BasePageApp):
 
     # hidden locators
     EVENTS_LISTS = '//div[@data-bind="foreach: Calendars"]'
-    INDIVIDUAL_EVENT_LIST = '//div[@class="sidebar__event-list"]'
+    INDIVIDUAL_EVENT_LIST = './/div[@class="sidebar__event-list"]'
+    INDIVIDUAL_EVENT_LIST_DELETE_BUTTON = '//a[@class="i-font i-delete fadeIn"]'
     NEW_EVENT_LIST_BLOCK = '//div[@data-bind="if: CalendarAdding"]'
     NEW_EVENT_LIST_NAME_FIELD = '//input[@placeholder="Calendar Name"]'
     SAVE_NEW_EVENT_LIST_BUTTON = '//button[@data-bind="click: ConfirmCalendarAdd"]'
@@ -42,3 +43,23 @@ class EventsPage(BasePageApp):
         WebDriverWait(self._driver, 10).until(ec.
                                               element_to_be_clickable((By.XPATH, self.SAVE_NEW_EVENT_LIST_BUTTON)))
         self._driver.find_element(By.XPATH, self.SAVE_NEW_EVENT_LIST_BUTTON).click()
+
+    def get_event_lists(self):
+        WebDriverWait(self._driver, 10).until(ec.presence_of_element_located((By.XPATH, self.EVENTS_LISTS)))
+        events_lists = self._driver.find_element(By.XPATH, self.EVENTS_LISTS)
+        return events_lists.find_elements(By.XPATH, self.INDIVIDUAL_EVENT_LIST)
+
+    def hover_on_individual_event_list(self, event_list):
+        # WebDriverWait(self._driver, 10).until(ec.presence_of_element_located(event_list))
+        ActionChains(self._driver).move_to_element(event_list).perform()
+
+    def click_individual_event_list_delete_button(self, event_list):
+        delete_button = (WebDriverWait(self._driver, 10).
+                         until(ec.element_to_be_clickable((By.XPATH, self.INDIVIDUAL_EVENT_LIST_DELETE_BUTTON))))
+        # self._driver.execute_script("arguments[0].scrollIntoView(true);", delete_button)
+        delete_button.click()
+
+    def add_event_list_flow(self, name):
+        self.click_add_event_list_button()
+        self.insert_in_new_event_list_name_field(name)
+        self.click_save_new_event_list_button()

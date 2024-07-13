@@ -9,10 +9,11 @@ from logic.search_results_page import SearchResultsPage
 class TestSearchResults(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.browser = BrowserWrapper()
-        cls.driver = cls.browser.get_driver("home_page")
-        cls.search_results_page = SearchResultsPage(cls.driver)
         cls.config = ConfigProvider.load_from_file()
+        cls.browser = BrowserWrapper()
+        cls.driver = cls.browser.get_driver(cls.config,"home_page")
+        cls.search_results_page = SearchResultsPage(cls.driver)
+
 
     @classmethod
     def tearDownClass(cls):

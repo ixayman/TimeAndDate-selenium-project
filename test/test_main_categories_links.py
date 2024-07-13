@@ -9,9 +9,10 @@ from logic.base_page_app import BasePageApp
 class TestMainCategoriesLinks(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.browser = BrowserWrapper()
-        cls.driver = cls.browser.get_driver("home_page")
         cls.config = ConfigProvider.load_from_file()
+        cls.browser = BrowserWrapper()
+        cls.driver = cls.browser.get_driver(cls.config,"home_page")
+
 
     @classmethod
     def tearDownClass(cls):
