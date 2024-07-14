@@ -1,10 +1,5 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import *
-from selenium.webdriver.support import expected_conditions as ec
-
-from infra.config_provider import ConfigProvider
 
 
 class BrowserWrapper:
@@ -20,8 +15,6 @@ class BrowserWrapper:
                 self._driver = webdriver.Chrome()
             elif browser == "Firefox":
                 self._driver = webdriver.Firefox()
-            elif browser == "Edge":
-                self._driver = webdriver.Edge()
             else:
                 raise ValueError(f"Unsupported browser: {browser}")
 

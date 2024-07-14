@@ -1,10 +1,4 @@
-import time
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.common import NoSuchElementException, StaleElementReferenceException
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as ec
 
 from logic.base_page_app import BasePageApp
 

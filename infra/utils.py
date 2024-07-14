@@ -13,6 +13,14 @@ def generate_random_string(length):
     return random_string
 
 
+def generate_random_email():
+    """
+          generates a random email
+          """
+    random_email = ''.join(random.choice(string.ascii_lowercase) for _ in range(8)) + '@example.com'
+    return random_email
+
+
 def convert_numberK_to_number(s):
     """
       Converts a string with a 'K' (representing thousands) to an integer.
@@ -70,3 +78,21 @@ def extract_temperature_unit(s):
         return 'Celsius'
     else:
         return 'Kelvin'
+
+
+def get_month_name(number):
+    months = {
+        1: 'January',
+        2: 'February',
+        3: 'March',
+        4: 'April',
+        5: 'May',
+        6: 'June',
+        7: 'July',
+        8: 'August',
+        9: 'September',
+        10: 'October',
+        11: 'November',
+        12: 'December'
+    }
+    return months[number]

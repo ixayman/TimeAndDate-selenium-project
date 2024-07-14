@@ -1,15 +1,12 @@
-import time
 import unittest
 
-from infra.browser_wrapper import BrowserWrapper
-from infra.config_provider import ConfigProvider
 from logic.unit_customization_page import UnitCustomizationPage
 from logic.home_page import HomePage
 from infra.utils import extract_temperature_unit
 from test.base_test import BaseTest
 
 
-class TestSearchResults(BaseTest):
+class TestChangeWeatherUnits(BaseTest):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()

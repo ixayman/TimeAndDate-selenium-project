@@ -3,6 +3,7 @@ import unittest
 
 from infra.browser_wrapper import BrowserWrapper
 from infra.config_provider import ConfigProvider
+from infra.utils import generate_random_email, generate_random_string
 from logic.base_page_app import BasePageApp
 
 
@@ -32,7 +33,7 @@ class TestLoginProcess(unittest.TestCase):
     def test_login_invalid_email(self):
         self.base_page_app.hover_on_account_menu()
         self.base_page_app.click_sign_in_pop_button()
-        self.base_page_app.insert_in_email_field("asdasd@asd.ss")
+        self.base_page_app.insert_in_email_field(generate_random_email())
         self.base_page_app.insert_in_password_field("password")
         self.base_page_app.click_sign_in_button()
         self.assertTrue(self.base_page_app.is_invalid_login_message_displayed())
@@ -41,7 +42,7 @@ class TestLoginProcess(unittest.TestCase):
         self.base_page_app.hover_on_account_menu()
         self.base_page_app.click_sign_in_pop_button()
         self.base_page_app.insert_in_email_field(self.config["email"])
-        self.base_page_app.insert_in_password_field("sdgfarewg")
+        self.base_page_app.insert_in_password_field(generate_random_string(8))
         self.base_page_app.click_sign_in_button()
         self.assertTrue(self.base_page_app.is_invalid_login_message_displayed())
 

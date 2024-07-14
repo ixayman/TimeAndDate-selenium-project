@@ -1,15 +1,15 @@
 import time
 import unittest
 
-from infra.browser_wrapper import BrowserWrapper
-from infra.config_provider import ConfigProvider
+from infra.utils import generate_random_string
 from logic.events_page import EventsPage
 from logic.home_page import HomePage
-from infra.utils import extract_temperature_unit,generate_random_string
 from test.base_test import BaseTest
 
 
-class TestSearchResults(BaseTest):
+class TestAddRemoveEventList(BaseTest):
+    created_list_name = None
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -20,13 +20,17 @@ class TestSearchResults(BaseTest):
 
     @classmethod
     def tearDownClass(cls):
+        # cls.events_page = EventsPage(cls.driver)
+        lists = cls.events_page.get_event_lists()
+        for list_item in lists:
+            if list_item.text == cls.created_list_name:
+                cls.events_page.remove_event_list_flow(list_item)
         cls.driver.close()
 
     def test_add_event_list(self):
         new_list_name = generate_random_string(5)
-        self.events_page.click_add_event_list_button()
-        self.events_page.insert_in_new_event_list_name_field(new_list_name)
-        self.events_page.click_save_new_event_list_button()
+        TestAddRemoveEventList.created_list_name = new_list_name
+        self.events_page.add_event_list_flow(new_list_name)
         self.events_page = EventsPage(self.driver)
         time.sleep(4)
         lists = self.events_page.get_event_lists()
@@ -37,23 +41,20 @@ class TestSearchResults(BaseTest):
         else:
             self.assertTrue(False)
 
-    def test_remove_event_list(self):
+    def test_add_remove_event_list(self):
         new_list_name = generate_random_string(5)
         self.events_page.add_event_list_flow(new_list_name)
         self.events_page = EventsPage(self.driver)
-        time.sleep(4)
+        time.sleep(2)
         lists = self.events_page.get_event_lists()
-        for list in lists:
-            if list.text == new_list_name:
-                print(list.text)
-                self.events_page.hover_on_individual_event_list(list)
-                self.events_page.click_individual_event_list_delete_button(list)
+        for list_item in lists:
+            if list_item.text == new_list_name:
+                self.events_page.remove_event_list_flow(list_item)
                 break
         self.events_page = EventsPage(self.driver)
-        time.sleep(4)
+        time.sleep(2)
         updated_lists = self.events_page.get_event_lists()
         for updated_list in updated_lists:
-            print(updated_list.text)
             if updated_list.text == new_list_name:
                 self.assertTrue(False)
                 break

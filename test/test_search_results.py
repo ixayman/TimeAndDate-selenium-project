@@ -1,4 +1,4 @@
-import time
+
 import unittest
 
 from infra.browser_wrapper import BrowserWrapper
@@ -11,9 +11,8 @@ class TestSearchResults(unittest.TestCase):
     def setUpClass(cls):
         cls.config = ConfigProvider.load_from_file()
         cls.browser = BrowserWrapper()
-        cls.driver = cls.browser.get_driver(cls.config,"home_page")
+        cls.driver = cls.browser.get_driver(cls.config, "home_page")
         cls.search_results_page = SearchResultsPage(cls.driver)
-
 
     @classmethod
     def tearDownClass(cls):
@@ -27,7 +26,6 @@ class TestSearchResults(unittest.TestCase):
         results = self.search_results_page.get_search_results_list()
         for result in results:
             self.assertIn(self.config["city"].lower(), self.search_results_page.get_result_title(result).lower())
-        time.sleep(2)
 
 
 if __name__ == '__main__':

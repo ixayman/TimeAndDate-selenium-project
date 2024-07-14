@@ -1,4 +1,4 @@
-import time
+
 import unittest
 
 from infra.browser_wrapper import BrowserWrapper
