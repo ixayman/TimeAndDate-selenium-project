@@ -15,5 +15,8 @@
     "city": "Tel Aviv",
     "location": "Tel Aviv\nIsrael",
     "city-auto-fill": "te",
-    "updated-location": "Tel Aviv, Israel"
+    "updated-location": "Tel Aviv, Israel",
+    "day-of-event": 16,
+    "month-of-event": 2,
+    "monthly-recurrence-indicator": "Monthly"
 }

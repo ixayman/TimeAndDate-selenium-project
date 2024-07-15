@@ -1,0 +1,28 @@
+2024-07-15 15:17:34,051 - test.base_test - INFO - --------------------------
+2024-07-15 15:17:34,051 - test.base_test - INFO - Loading configuration
+2024-07-15 15:17:34,052 - infra.browser_wrapper - INFO - Browser selected: Chrome
+2024-07-15 15:17:35,181 - infra.browser_wrapper - INFO - Navigating to URL: https://www.timeanddate.com
+2024-07-15 15:18:22,411 - test.base_test - INFO - Browser opened - load cookies
+2024-07-15 15:18:24,501 - test.base_test - INFO - Cookies loaded
+2024-07-15 15:18:25,739 - test_add_event - INFO - Navigate to events page
+2024-07-15 15:18:27,305 - test_add_event - INFO - Create new event list
+2024-07-15 15:18:32,517 - test_add_event - INFO - Arrange: get chosen day number and month number
+2024-07-15 15:18:32,518 - test_add_event - INFO - Act: click on the day number and add event with random title and choose monthly recurrence
+2024-07-15 15:18:34,871 - test_add_event - INFO - Assert: go through the months and check if the event is created
+2024-07-15 15:18:36,859 - test_add_event - INFO - Remove created event list
+2024-07-15 15:18:42,313 - infra.browser_wrapper - INFO - browser closed
+2024-07-15 15:18:42,313 - infra.browser_wrapper - INFO - --------------------------
+2024-07-15 15:19:19,686 - test.base_test - INFO - --------------------------
+2024-07-15 15:19:19,686 - test.base_test - INFO - Loading configuration
+2024-07-15 15:19:19,687 - infra.browser_wrapper - INFO - Browser selected: Firefox
+2024-07-15 15:19:24,354 - infra.browser_wrapper - INFO - Navigating to URL: https://www.timeanddate.com
+2024-07-15 15:19:34,304 - test.base_test - INFO - Browser opened - load cookies
+2024-07-15 15:19:36,332 - test.base_test - INFO - Cookies loaded
+2024-07-15 15:19:42,176 - test_add_event - INFO - Navigate to events page
+2024-07-15 15:19:44,171 - test_add_event - INFO - Create new event list
+2024-07-15 15:19:49,643 - test_add_event - INFO - Arrange: get chosen day number and month number
+2024-07-15 15:19:49,643 - test_add_event - INFO - Act: click on the day number and add event with random title and choose monthly recurrence
+2024-07-15 15:19:52,627 - test_add_event - INFO - Assert: go through the months and check if the event is created
+2024-07-15 15:19:58,189 - test_add_event - INFO - Remove created event list
+2024-07-15 15:20:04,518 - infra.browser_wrapper - INFO - browser closed
+2024-07-15 15:20:04,518 - infra.browser_wrapper - INFO - --------------------------

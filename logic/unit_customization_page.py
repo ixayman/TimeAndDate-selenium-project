@@ -5,6 +5,7 @@ from logic.base_page_app import BasePageApp
 
 
 class UnitCustomizationPage(BasePageApp):
+    # Define XPATH locators for elements on the unit customization page
     TEMPERATURE_UNITS_SELECTOR = '//select[@id="fut"]'
     PRESSURE_UNITS_SELECTOR = '//select[@id="fup"]'
     WINDSPEED_UNITS_SELECTOR = '//select[@id="fuw"]'
@@ -14,6 +15,7 @@ class UnitCustomizationPage(BasePageApp):
 
     def __init__(self, driver):
         super().__init__(driver)
+        # Initialize the elements
         self._temperature_units_selector = driver.find_element(By.XPATH, self.TEMPERATURE_UNITS_SELECTOR)
         self._pressure_units_selector = driver.find_element(By.XPATH, self.PRESSURE_UNITS_SELECTOR)
         self._windspeed_units_selector = driver.find_element(By.XPATH, self.WINDSPEED_UNITS_SELECTOR)

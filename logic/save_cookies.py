@@ -21,7 +21,6 @@ def save_cookies():
     cookies = driver.get_cookies()
     with open('../cookies.pkl', 'wb') as file:
         pickle.dump(cookies, file)
-
     driver.quit()
 
 

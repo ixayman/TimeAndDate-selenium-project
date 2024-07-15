@@ -9,19 +9,20 @@ from infra.base_page import BasePage
 
 
 class BasePageApp(BasePage):
+    # Define XPATH locators for elements on the page
     MAIN_LOGO = '//div[@class="tad-logo"]'
     ACCOUNT_HOVER = '//span[text()="My Account"]'
     MENU_ITEM_LIST = '//li[contains(@class, "site-nav__menu")]'
     SEARCH_BUTTON = '//i[@class="i-font i-search"]'
     SEARCH_FIELD = '//input[@id="site-nav-search"]'
 
-    # HIDDEN HOVER
+    # HIDDEN UNDER HOVER locators
     SIGN_IN_POP_BUTTON = '//a[@id="poplogin"]'
     SIGN_OUT_POP_BUTTON = '//a[@id="popout"]'
     MY_LOCATION_POP_BUTTON = '//a[@id="popchi"]'
     MY_EVENTS_POP_BUTTON = '//a[text()="My Events"]'
 
-    # HIDDEN POPUP
+    # HIDDEN UNDER POPUP locators
     EMAIL_FIELD = '//input[@id="email"]'
     PASSWORD_FIELD = '//input[@id="password"]'
     SIGN_IN_BUTTON = '//input[@id="create"]'
@@ -34,9 +35,11 @@ class BasePageApp(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
+        # Initialize the elements
         self._main_logo = driver.find_element(By.XPATH, self.MAIN_LOGO)
         self._account_hover = self._driver.find_element(By.XPATH, self.ACCOUNT_HOVER)
         self._menu_item_list = self._driver.find_elements(By.XPATH, self.MENU_ITEM_LIST)
+        # Assign menu items to variables for easier access
         self._news_menu = self._menu_item_list[0]
         self._world_clock_menu = self._menu_item_list[1]
         self._time_zone_menu = self._menu_item_list[2]
@@ -119,6 +122,7 @@ class BasePageApp(BasePage):
             (By.XPATH, self.MY_LOCATION_POP_BUTTON)), message="My location pop up button not found").click()
 
     def insert_in_city_name_field(self, value):
+        # Insert text into the city name field
         WebDriverWait(self._driver, 10).until(ec.presence_of_element_located(
             (By.XPATH, self.CITY_NAME_FIELD)), message="City name field not found")
         field = self._driver.find_element(By.XPATH, self.CITY_NAME_FIELD)
@@ -126,16 +130,19 @@ class BasePageApp(BasePage):
         field.send_keys(value)
 
     def get_city_auto_fill_list(self):
+        # Get the city auto-fill list
         WebDriverWait(self._driver, 10).until(ec.presence_of_element_located(
             (By.XPATH, self.CITY_AUTO_FILL_LIST)), message="City auto fill list not found")
         return self._driver.find_elements(By.XPATH, self.CITY_AUTO_FILL_LIST)
 
     def get_city_auto_fill_list_item_name(self, item):
+        # Get the name of an item in the city auto-fill list
         WebDriverWait(self._driver, 10).until(ec.presence_of_element_located(
             (By.XPATH, self.CITY_AUTO_FILL_LIST_ITEM_NAME)), message="City auto fill list item name not found")
         return item.find_element(By.XPATH, self.CITY_AUTO_FILL_LIST_ITEM_NAME).text
 
     def get_city_auto_fill_list_item_country(self, item):
+        # Get the country of an item in the city auto-fill list
         WebDriverWait(item, 10).until(ec.presence_of_element_located(
             (By.XPATH, self.CITY_AUTO_FILL_LIST_ITEM_NAME)), message="City auto fill list item country not found")
         return item.find_element(By.XPATH, self.CITY_AUTO_FILL_LIST_ITEM_COUNTRY).text
@@ -147,13 +154,16 @@ class BasePageApp(BasePage):
     def click_city_save_button(self):
         WebDriverWait(self._driver, 10).until(ec.presence_of_element_located(
             (By.XPATH, self.CITY_SAVE_BUTTON)), message="City save button not found").click()
+        time.sleep(2)
 
     # -----------------------------------------------------------------------------------------------------
     def click_sign_in_pop_button(self):
+        # Click the "Sign In" button to open (sign in popup window)
         WebDriverWait(self._driver, 10).until(ec.presence_of_element_located(
             (By.XPATH, self.SIGN_IN_POP_BUTTON)), message="Sign in pop up button not found").click()
 
     def insert_in_email_field(self, value):
+        # Insert text into the email field
         WebDriverWait(self._driver, 10).until(ec.presence_of_element_located(
             (By.XPATH, self.EMAIL_FIELD)), message="Email field not found")
         field = self._driver.find_element(By.XPATH, self.EMAIL_FIELD)
@@ -161,6 +171,7 @@ class BasePageApp(BasePage):
         field.send_keys(value)
 
     def insert_in_password_field(self, value):
+        # Insert text into the password field
         WebDriverWait(self._driver, 10).until(ec.presence_of_element_located(
             (By.XPATH, self.PASSWORD_FIELD)), message="Password field not found")
         field = self._driver.find_element(By.XPATH, self.PASSWORD_FIELD)
@@ -168,12 +179,15 @@ class BasePageApp(BasePage):
         field.send_keys(value)
 
     def click_sign_in_button(self):
+        # Click the "Sign In" button
         WebDriverWait(self._driver, 10).until(ec.presence_of_element_located(
             (By.XPATH, self.SIGN_IN_BUTTON)), message="Sign in button not found")
         button = self._driver.find_element(By.XPATH, self.SIGN_IN_BUTTON)
         button.click()
+        time.sleep(2)
 
     def is_invalid_login_message_displayed(self):
+        # Check if an invalid login message is displayed
         try:
             invalid_login_message = self._driver.find_element(By.XPATH, self.INVALID_LOGIN_MESSAGE)
             invalid_login_message.is_displayed()
@@ -182,6 +196,7 @@ class BasePageApp(BasePage):
             return False
 
     def is_sign_out_Pop_displayed(self):
+        # Check if the sign-out popup is displayed (indicates that user is logged in)
         try:
             sign_out_pop_button = self._driver.find_element(By.XPATH, self.SIGN_OUT_POP_BUTTON)
             sign_out_pop_button.is_displayed()
@@ -208,8 +223,8 @@ class BasePageApp(BasePage):
 
     def is_locked_login_message_displayed(self):
         """
-        Check if login is locked by website
-        :return:
+        Check if login is locked by the website
+        :return: True if locked, False otherwise
         """
         try:
             locked_login_message = (
@@ -231,7 +246,6 @@ class BasePageApp(BasePage):
         self.insert_in_email_field(email)
         self.insert_in_password_field(password)
         self.click_sign_in_button()
-        time.sleep(2)
         if self.is_locked_login_message_displayed():
             print("login locked by website")
             self._driver.close()
